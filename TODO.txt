@@ -14,5 +14,5 @@ V Add target with configurable patrol path
 =-=-=-= Python =-=-=-=
 
 V Write telemetry server with a onTelemetryUpdate()
-- Implement flight startegy with control
+V Implement flight startegy with control
 
