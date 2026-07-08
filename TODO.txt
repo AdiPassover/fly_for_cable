@@ -1,0 +1,18 @@
+=-=-=-= General =-=-=-=
+
+- Decide which telemetry data I need to pass
+- Design protocol for passing telemetry (could be a single .json)
+- Design flight startegy based on telemetry to hit target
+
+
+=-=-=-= UE =-=-=-=
+
+- Add target with configurable patrol path
+- Add client, constantly sending telemetry to controller server (relative position).
+
+
+=-=-=-= Python =-=-=-=
+
+- Write telemetry server with a onTelemetryUpdate()
+- Implement flight startegy with control
+
