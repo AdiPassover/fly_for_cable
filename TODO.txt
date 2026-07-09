@@ -8,7 +8,7 @@ V Design flight startegy based on telemetry to hit target
 =-=-=-= UE =-=-=-=
 
 V Add target with configurable patrol path
-- Add client, constantly sending telemetry to controller server (relative position).
+V Add client, constantly sending telemetry to controller server (relative position).
 
 
 =-=-=-= Python =-=-=-=
