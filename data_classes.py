@@ -25,10 +25,10 @@ class TelemetryData:
         :param data: The bytes data to convert.
         :return: A TelemetryData instance.
         """
-        if len(data) != 32:
-            raise ValueError("Invalid data length for TelemetryData. Expected 32 bytes.")
+        if len(data) != 36:
+            raise ValueError(f"Invalid data length ({len(data)}) for TelemetryData. Expected 36 bytes.")
         
-        unpacked_data = struct.unpack('!ffffffff', data)
+        unpacked_data = struct.unpack('<9f', data)
         return TelemetryData(*unpacked_data)
     
     def __str__(self):

@@ -24,16 +24,18 @@ def process_telemetry_data(data: TelemetryData) -> ControllerCommand:
     # Configuration parameters
     # -----------------------------
 
-    FORWARD_PITCH = 0.4
+    FORWARD_PITCH = 0.85
 
-    YAW_GAIN = 1.5
-    ALTITUDE_GAIN = 0.05
+    YAW_GAIN = 4.0
+    ALTITUDE_GAIN = 0.005
 
     MAX_YAW_STICK = 1.0
-    MAX_THROTTLE = 1.0
+    MAX_THROTTLE = 0.5
 
     # Reduce speed when badly misaligned
     MAX_YAW_ERROR_FOR_FULL_SPEED = math.radians(45)
+
+    data.target_z = data.target_z - 75  # aim for the cable below
 
 
     # -----------------------------
@@ -43,13 +45,13 @@ def process_telemetry_data(data: TelemetryData) -> ControllerCommand:
     drone_pos = (
         data.drone_x,
         data.drone_y,
-        data.drone_z,
+        data.drone_z
     )
 
     target_pos = (
         data.target_x,
         data.target_y,
-        data.target_z,
+        data.target_z  # aim for the cable below
     )
 
     relative = relative_vector(drone_pos, target_pos)

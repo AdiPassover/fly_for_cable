@@ -16,7 +16,6 @@ class UDPServer:
         self.on_data_received = on_data_received
         self.running = True
 
-        # Create a socket
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         self.sock.bind((self.host, self.port))
 
@@ -39,6 +38,7 @@ class UDPServer:
 if __name__ == "__main__":
 
     def print_data(data):
-        print(f"Data received: {data.decode()}")
+        print(f"Data received: {data}")
     
-    server = UDPServer("localhost", 9999, print_data)
+    server = UDPServer("127.0.0.1", 9000, print_data)
+    server.listen()
